@@ -1,11 +1,29 @@
 import React from 'react'
-
-import '../../global.css'
+import { FiLogIn } from 'react-icons/fi'
 
 import './styles.css';
 
-export default function Logon(){
+import heroiImage from '../../assets/heroes.png';
+import logoImg from '../../assets/logo.svg'
+
+export default function Logon() {
     return (
-        <h1> Hello world</h1>
+        <div className="logo-container">
+            <section className="form">
+                <img src={logoImg} alt="Be the heroi" />
+
+                <form>
+                    <h1>Faca seu logon</h1>
+                    <input placeholder="Sua id" />
+                    <button className="button" type="submit">Entrar</button>
+
+                    <a href="/register">
+                        <FiLogIn size={16} color="#E02041" />
+                        Não tenho cadastro</a>
+                </form>
+            </section>
+            <img src={heroiImage} alt="Herois" />
+        </div>
+
     );
 }
