@@ -21,7 +21,7 @@ module.exports = {
     async create(requisicao, resposta) {
         const { title, description, value } = requisicao.body;
 
-        const ong_id = requisicao.headers.autorizacao;
+        const ong_id = requisicao.headers.authorization;
 
         const [id] = await conection('incidents').insert({
             title,
@@ -35,7 +35,7 @@ module.exports = {
 
     async delete(req, res) {
         const { id } = req.params;
-        const ong_id = req.headers.autorizacao;
+        const ong_id = req.headers.authorization;
 
         const incidents = await conection("incidents")
             .where('id', id)
