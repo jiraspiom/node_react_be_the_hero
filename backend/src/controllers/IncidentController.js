@@ -13,7 +13,7 @@ module.exports = {
         .offset((page - 1 ) * 5)
         .select(['incidents.*', 'ongs.name', 'ongs.email', 'ongs.whatsapp', 'ongs.city', 'ongs.uf']);
 
-        resposta.header('X-Total-Quantidade', count['count(*)'])
+        resposta.header('x-total-count', count['count(*)'])
 
         return resposta.json(incidents);
     },
